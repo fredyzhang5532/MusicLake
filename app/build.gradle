@@ -4,15 +4,26 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 repositories {
+ flatDir {
+        dirs 'libs'
+    }
     mavenCentral()
 }
 android {
     signingConfigs {
-        release {
-            keyAlias 'musiclake'
-            keyPassword '123123'
-            storeFile file('../app/jks/musiclake.jks')
-            storePassword '123123'
+    
+       
+          release {
+            storeFile file('../app/jks/yzhua.jks.old')
+            storePassword 'guili5532'
+            keyPassword '123456'
+            keyAlias 'key0'
+        }
+        debug {
+            storeFile file('../app/jks/yzhua.jks.old')
+            storePassword 'guili5532'
+            keyPassword '123456'
+            keyAlias 'key0'
         }
     }
     buildToolsVersion '30.0.2'
@@ -164,7 +175,8 @@ dependencies {
 //    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
 
     //微博
-    implementation 'com.sina.weibo.sdk:core:4.3.0:openDefaultRelease@aar'
+   // implementation 'com.sina.weibo.sdk:core:4.3.0:openDefaultRelease@aar'
+    implementation (name: 'openDefault-4.4.3', ext: 'aar')
 
     //横幅
     implementation 'com.github.pinguo-zhouwei:MZBannerView:v2.0.2'
