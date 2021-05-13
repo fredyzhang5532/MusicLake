@@ -12,19 +12,13 @@ repositories {
 android {
     signingConfigs {
     
-       
-          release {
-            storeFile file('../app/jks/yzhua.jks.old')
-            storePassword 'guili5532'
-            keyPassword '123456'
-            keyAlias 'key0'
+        release {
+            keyAlias 'musiclake'
+            keyPassword '123123'
+            storeFile file('../app/jks/musiclake.jks')
+            storePassword '123123'
         }
-        debug {
-            storeFile file('../app/jks/yzhua.jks.old')
-            storePassword 'guili5532'
-            keyPassword '123456'
-            keyAlias 'key0'
-        }
+        
     }
     buildToolsVersion '30.0.2'
     defaultConfig {
